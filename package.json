@@ -1,7 +1,7 @@
 {
   "name": "string-authority",
-  "version": "1.0.1",
-  "description": "String utilities and conflict conditionals (includes tailwind-merge).",
+  "version": "1.0.11",
+  "description": "String utilities and conflict conditionals.",
   "author": "Ilham Khoeri <ilkhoeri@gmail.com>",
   "license": "MIT",
   "files": [
@@ -32,15 +32,13 @@
     "classes",
     "className",
     "classNames",
-    "tailwind-merge",
     "classList",
-    "twMerge",
+    "str-merge",
     "clsx",
     "css",
     "react"
   ],
   "scripts": {
-    "up": "npm publish",
     "build": "tsc --project tsconfig.json",
     "lint": "eslint src --cache",
     "format": "prettier src",
@@ -48,15 +46,7 @@
     "typecheck": "tsc --noEmit",
     "test": "npm run lint && npm run format:check && npm run typecheck"
   },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": false,
-    "trailingComma": "es5",
-    "endOfLine": "lf"
-  },
-  "peerDependencies": {
-    "tailwind-merge": "^2.5.4"
-  },
+  "peerDependencies": {},
   "dependencies": {},
   "devDependencies": {}
 }

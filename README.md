@@ -1,6 +1,6 @@
 # string-authority
 
-String utilities and conflict conditionals (includes tailwind-merge).
+### String utilities and conflict conditionals.
 
 ## Installation
 
@@ -67,10 +67,11 @@ import { cn } from "string-authority";
 ### cvx
 
 ```js
-import { cvx, twMerge, type VariantsType } from "string-authority";
+import { cvx, type VariantsType } from "string-authority";
 
 const classes = cvx({
-  assign: "bg-muted rounded-sm px-2 border flex items-center justify-center", // assign values that is definitely returned
+  // assign values that is definitely returned
+  assign: "bg-muted rounded-sm px-2 border flex items-center justify-center",
   variants: {
     variant: {
       bold: "font-bold",
@@ -104,34 +105,13 @@ interface ClnProps extends MyVariantsType {
   unstyled?: boolean;
   className?: string;
 }
-export function clN(props: ClnProps) {
-  const { className, unstyled, ...rest } = props;
-  return { className: twMerge(!unstyled && classes({ ...rest }), className) };
-}
+
 ```
 then:
 ```js
-export function CvxDemo(props: ClnProps) {
-  const { className, color, size, variant, unstyled } = props;
-  return (
-    <div className="flex flex-col gap-4">
-      <div {...clN(props)}>MY COMPONENT</div>
-
-      <div className={classes()}>MY COMPONENT</div>
-
-      <div className={classes({ color: "red", size: "lg" })}>MY COMPONENT</div>
-
-      <div
-        className={twMerge(
-          classes({ color: "red", size: "md" }),
-          "bg-black/60 dark:bg-white/60 text-white dark:text-black font-extrabold border-0",
-        )}
-      >
-        MY COMPONENT
-      </div>
-    </div>
-  );
-}
+<div {...clN(props)}>MY COMPONENT</div>
+<div className={classes()}>MY COMPONENT</div>
+<div className={classes({ color: "red", size: "lg" })}>MY COMPONENT</div>
 ```
 
 ## Link
